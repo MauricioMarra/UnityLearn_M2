@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/BochaGame.unity
+    guid: 42bb4b032255ef04cbb8535e55ab4286
   m_configObjects: {}
