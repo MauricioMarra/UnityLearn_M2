@@ -6,6 +6,11 @@ public class AimControl : MonoBehaviour
 {
     [SerializeField] private GameObject spawnPoint;
 
+    private void Awake()
+    {
+        spawnPoint = GameObject.Find("SpawnPoint");
+    }
+
     // Update is called once per frame
     void Update()
     {

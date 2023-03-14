@@ -13,7 +13,6 @@ namespace Bocha
 
         [SerializeField] private GameObject guide;
         [SerializeField] private float multiplier;
-        [SerializeField] private Slider slider;
         [SerializeField] private GameObject spawnPoint;
 
         private float min = 0f;
@@ -28,6 +27,7 @@ namespace Bocha
         {
             rb = GetComponent<Rigidbody>();
             //rb.maxAngularVelocity = 50f;
+            spawnPoint = GameObject.Find("SpawnPoint");
         }
 
         // Update is called once per frame
@@ -48,6 +48,7 @@ namespace Bocha
                     rb.AddRelativeForce(0, 0, forceApplied * multiplier, ForceMode.Impulse);
                     canManipulateSphere = false;
                     guide.SetActive(false);
+                    GameManager.instance.ReadyNextPlayer();
                 }
 
                 if (isPressed)
