@@ -21,4 +21,22 @@ public class TargetSphereControl : MonoBehaviour
     {
         Gizmos.DrawSphere(this.transform.position, GetComponent<SphereCollider>().radius);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("YellowSphere"))
+            GameManager.instance.SetYellowScore(1);
+
+        if (other.gameObject.CompareTag("BlueSphere"))
+            GameManager.instance.SetBlueScore(1);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("YellowSphere"))
+            GameManager.instance.SetYellowScore(-1);
+
+        if (other.gameObject.CompareTag("BlueSphere"))
+            GameManager.instance.SetBlueScore(-1);
+    }
 }
